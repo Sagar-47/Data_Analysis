@@ -6,7 +6,7 @@ raw_data=pd.read_table('Complete_TAVG_daily.txt', sep='\s+',comment='%')
 numpy_array=raw_data.values 
 tfix= lambda t : t + 8.68
 vtfix=np.vectorize(tfix)
-ncolumn = vtfix(ar[:,5])
+ncolumn = vtfix(numpy_array[:,5])
 reshapencolumn= np.reshape(ncolumn, (ncolumn.size,1))
 total_data=np.append(numpy_array,reshapencolumn,axis=1)
 year= input("enter the year:")
